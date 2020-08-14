@@ -13,74 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      -ms-flex-align: center;
-      align-items: center;
-      background-color: #eff0f1;
-    }
-
-    #contenedorlogo {
-      width: 100%;
-    }
-
-    #imglog {
-      width: auto;
-      
-    }
-
-    #titulo {
-      text-align: center;
-      width: 100%;
-    }
-
-    h1 {
-      color: #d61c6c;
-      background-color: rgba(0, 0, 0, 0.5);
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      font-size: 50px;
-      letter-spacing: 3px;
-      text-shadow: 2px 2px 2px #000000a6;
-      box-shadow: 2px 2px 4px black;
-    }
-
-    form {
-      width: 100%;
-    }
-
-    #correo, #contraseña, #repcontraseña {
-      width: 20%;
-      min-width: 200px;
-      margin: 5px;
-      padding: 5px;
-      border-radius: 10px;
-
-    }
-
-    #boton {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      text-shadow: 2px 2px 2px #000000a6;
-      padding: 10px;
-      color: #ffff;
-      background-color: #465f0d;
-      border-radius: 10px;
-    }
-    
-  
-  </style>
+  <link href="css/estiloslogin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
@@ -88,18 +21,18 @@
     <img src="img/milogo.png" id="imglog">
   </div>
   
-  <h1 id="titulo">Registrarse</h1>
+  
   <form id="formulario" action="#" method="GET">
     <input type="email" id="correo" name="email" required placeholder="Ingrese su email"><br><br>
 
     <input type="password" id="contraseña" name="password" required maxlength="12" minlength="6" placeholder="Ingrese su contraseña"><br><br>
+
+    <input type="checkbox" id="recordarme" name="recordardatos">
+    <label for="recordarme" id="labelRecordarme">Recordarme</label><br><br>
     
-    <input type="password" id="repcontraseña" name="reppass" placeholder="Repita su contraseña"><br><br>
+    <input  type="submit" value="Registrarme" id="boton">
     
-    <input type="submit" value="Enviar" id="boton">
   </form>
-  
-  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

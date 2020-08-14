@@ -1,0 +1,56 @@
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    background-color: rgba(224, 224, 224, 0.582);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 30px;
+}
+
+h2 {
+    text-indent: 15px;
+}
+
+.cantVendidos {
+    font-weight: bold;
+    color: rgb(53, 53, 53);  
+    padding: 7px;
+    font-size: 18px;
+    margin-right: 20px;
+    background-color: rgba(225, 0, 255, 0.404);
+    box-shadow: 2px 2px 2px black;
+}
+
+.descripcion {
+    font-size: 20px;
+    text-indent: 10px;
+    padding: 20px;
+}
+
+.imagenDescrip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.precio {
+    
+    text-align: center;
+    width: 200px;
+    margin: 20px;
+    font-weight: bold;
+    color: rgb(53, 53, 53);  
+    padding: 7px;
+    font-size: 18px;
+    margin-right: 20px;
+    background-color: rgba(225, 0, 255, 0.404);
+    box-shadow: 2px 2px 2px black;
+}
