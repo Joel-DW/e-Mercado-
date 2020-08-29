@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         evento.preventDefault();
         location.href = "./index.html";
         sessionStorage.setItem("logueado", true);
+        
+        var username = document.getElementById("correo");
+        localStorage.setItem("correo", username.value);
+        
         return true;
     })
 });

@@ -22,8 +22,31 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <a href="#" id="nickname"></a>
       </div>
     </nav>
+    <div class="ordenarSegun">
+      <form id="orden" action="#" method="POST">
+        <label for="rangoDesde">Precio desde: $</label>
+        <input type="text" id="rangoDesde" name="rangoDePrecios1" placeholder="1000">
+
+        <label for="rangoHasta">Hasta: $</label>
+        <input type="text" id="rangoHasta" name="rangoDePrecios2" placeholder="2000">
+      
+        <input type="button" id="boton1" value="Filtrar">
+      </form>
+      
+      <ul class="ordenarLista">
+        <li><a href="#" id="Os">Ordenar según</a>
+          <ul>
+            <li><a href="#" id="relevancia">Relevancia</a></li>
+            <li><a href="#" id="menprec">Menor precio</a></li>
+            <li><a href="#" id="mayprec">Mayor precio</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div>
     <h1>Productos</h1>
     <main id="pro-list-container">
 

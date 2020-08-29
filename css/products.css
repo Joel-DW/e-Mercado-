@@ -1,3 +1,5 @@
+body{
+}
 
 h1 {
     text-align: center;
@@ -53,4 +55,66 @@ h2 {
     margin-right: 20px;
     background-color: rgba(225, 0, 255, 0.404);
     box-shadow: 2px 2px 2px black;
+}
+
+img {
+    width: 500px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.568);
+}
+
+.ordenarSegun{
+    background-color: rgb(53, 53, 53);
+    color: aliceblue;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+.ordenarLista{
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.ordenarLista > li{
+    float: left;
+}
+
+.ordenarLista li a{
+    background-color: rgb(53, 53, 53);
+    color: aliceblue;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+.ordenarLista li a:hover {
+    background-color: rgb(27, 27, 27);
+}
+
+.ordenarLista li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.ordenarLista li:hover > ul {
+    display: block;
+}
+
+#Os{
+    font-weight: bold;
+    background-color: darkturquoise;
+    border-radius: 4px;
+}
+
+#mayprec{
+    border-radius: 0px 0px 5px 5px;
+}
+
+#ordenarSegunPNG{
+    width: 20px;
 }

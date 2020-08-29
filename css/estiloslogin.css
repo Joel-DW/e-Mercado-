@@ -1,25 +1,32 @@
 html, body{
-    height: 100%;
+    
   }
 
   body {
-    display: -ms-flexbox;
+    
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    -ms-flex-align: center;
+    justify-content: center;
     align-items: center;
+    background-image: url(../img/bg.jpg);
+    background-repeat: repeat;
+    background-position: center;
     background-color: #eff0f1;
   }
 
   #contenedorlogo {
     width: 100%;
+    margin-top: 40px;
+    padding: 5px;
+    background-color: rgba(240, 248, 255, 0.377);
   }
 
   #imglog {
     width: auto;
+    background-color: rgba(white, white, white, 1);
     
   }
 
@@ -29,16 +36,14 @@ html, body{
   }
 
   
-  form {
-    width: 100%;
-  }
+ 
 
-  #correo, #contraseña, #repcontraseña {
-    width: 20%;
+  #correo, #contraseña, #recordarme, #boton{
+    width: 100%;
     min-width: 200px;
     margin: 5px;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 
   }
 
@@ -49,7 +54,7 @@ html, body{
     text-shadow: 2px 2px 2px #000000a6;
     padding: 10px;
     color: #ffff;
-    background-color: #465f0d;
+    background-color: #d61c6c;
     border-radius: 10px;
   }
 
@@ -57,4 +62,31 @@ html, body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 15px;
+  }
+
+  form {
+    background-color: aliceblue ;
+    width: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 4px 4px 4px #0000009f;
+  }
+
+  .contenedorform{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row nowrap;
+  }
+
+  #bienvenidoImg{
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: 4px 4px 4px #0000009f;
   }
