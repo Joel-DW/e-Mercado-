@@ -1,0 +1,41 @@
+.contenedor10{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+}
+
+.tabla{
+    width: 850px;
+    height: 100px;
+    margin: 20px;
+}
+
+.tabla th, td{
+    border: 1px double rgba(0, 0, 0, 0.411);
+    padding: 10px;
+}
+
+.productsImg{
+    width: 200px;
+}
+
+.contenedorTotal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.tablaTotal{
+    width: 100px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    font-size: 25px;
+    text-align: center;
+}

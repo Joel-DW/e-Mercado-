@@ -54,6 +54,8 @@ mostrarUser();
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
+  document.getElementById('cerrar-sesion').addEventListener('click', function(){
+    sessionStorage.removeItem('logueado');
+  })
 
 });

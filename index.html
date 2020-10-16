@@ -12,6 +12,8 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/perfil-desplegable.css" rel="stylesheet">
+    
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -20,8 +22,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a id="nickname" href="#"></a>
+        <ul class="mi-perfil">
+          <li><a href="#" id="nickname"></a>
+            <ul >
+              <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
+              <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
+              <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </nav>
     <main role="main">

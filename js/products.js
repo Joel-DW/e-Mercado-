@@ -38,21 +38,27 @@ function showProductsList(){
     let htmlContentToAppend = "";
     for(let i = 0; i < currentProductsArray.length; i++){
         let products = currentProductsArray[i];
+        let productName = products.name;
+        console.log(productName);
         
         if (((minCost == undefined) || (minCost != undefined && parseInt(products.cost) >= minCost)) &&
             ((maxCost == undefined) || (maxCost != undefined && parseInt(products.cost) <= maxCost))){
             
                 htmlContentToAppend += 
+                `<hr>`+
                 `<div class="contenedor">`+
-                `<h2 class="nombre">`+ products.name +`</h2>` + 
+                `<a href="product-info.html?`+ productName +`">`+
+                `<h2 class="nombre"> `+ products.name + `</a></h2>` + 
                 `<div class="cantVendidos">`+ `Vendidos: `+ products.soldCount+`</div>`+
                 `</div>`+
                 `<div class="imagenDescrip">`+
-                `<img src="`+products.imgSrc+`">`+
+                `<img src="`+products.imgSrc+`" alt="Foto del producto">`+
                 `<p class="descripcion">`+ products.description+ `</p>`+ `<br><br>`+
                 `</div>`+
                 `<div class="precio">`+ `Precio: `+ products.currency+ ` `+products.cost+
-                `</div>`
+                `</a>`+
+                `</div>`+
+                `<hr>`
                 ;
             }
             document.getElementById("pro-list-container").innerHTML = htmlContentToAppend;
@@ -89,13 +95,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("relevancia").addEventListener("click", function(){
         sortAndShowProducts(ORDER_BY_PROD_COUNT);
     });
-    /*document.getElementById("boton1").addEventListener("click", function(){
-        document.getElementById("rangoDesde").value = "";
-        document.getElementById("rangoHasta").value = "";
-        minCost = undefined;
-        maxCost = undefined;
-        showProductsList();
-    });*/
+    
     document.getElementById("boton1").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
         //de articulos por producto.
