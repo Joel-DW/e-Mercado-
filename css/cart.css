@@ -1,41 +1,128 @@
-.contenedor10{
-    margin: 20px;
-    padding: 10px;
-    border-radius: 5px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border: 1px solid rgba(0, 0, 0, 0.452);
+body {
+  overflow-x: hidden;
 }
 
-.tabla{
-    width: 850px;
-    height: 100px;
-    margin: 20px;
+footer {
+  background: rgb(240,138,255);
+  background: linear-gradient(0deg, rgba(240,138,255,1) 0%, rgba(9,9,121,0) 34%, rgba(0,212,255,0) 100%);
 }
 
-.tabla th, td{
-    border: 1px double rgba(0, 0, 0, 0.411);
-    padding: 10px;
+.titulo {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart-table {
+  margin-top: 20px;
+}
+
+.tablerows {
+  margin: 5px;
+  padding: 10px;
+}
+
+.imagen-producto{
+    width: 90px;
+    height: 90px;
+}
+
+.imagen-producto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.contenedor{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.totalapagar p{
+  font-size: 24px;
 }
 
 .productsImg{
-    width: 200px;
+    height: 130px;
 }
 
-.contenedorTotal{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+.subtotalDl {
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
-.tablaTotal{
-    width: 100px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.452);
-    font-size: 25px;
-    text-align: center;
+.formadepago{
+  margin: 20px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.totalenvio {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.modal-subtitle{
+  font-size: 20px;
+}
+
+.finalizar-compra {
+  margin-bottom: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-comprar {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+#totalmasenvio {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modalt1 {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(205, 43, 226);
+  text-shadow: rgba(0, 0, 0, 0.514);
+}
+
+.avisodecompra {
+  font-size: 20px;
+  text-indent: 10px;
+}
+
+.modalbody {
+  background-image: url("../img/carritotransparente.png");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.ctdr1 {
+  font-family: Arial, Helvetica, sans-serif;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.ctdr2 {
+  display: flex;
+  justify-content: center;
+}
+
+.cardtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
 }

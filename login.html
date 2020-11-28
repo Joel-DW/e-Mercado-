@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/estiloslogin.css" rel="stylesheet">
 </head>
@@ -20,19 +21,21 @@
   <div id="contenedorlogo">
     <img src="img/milogo.png" id="imglog">
   </div>
-  
-  <div class="contenedorform">
-    <img src="img/bienvenido.png" id="bienvenidoImg">
-    <form id="formulario" action="#" method="GET">
-    
-    <input type="text" id="correo" name="user" required placeholder="Ingrese su email">
 
-    <input type="password" id="contraseña" name="password" required maxlength="12" minlength="6" placeholder="Ingrese su contraseña">
-    
-    <input  type="submit" value="Registrarme" id="boton">
-  </div>  
+  <div class="contenedorform">
+    <img src="./img/bienvenido.png" id="bienvenidoImg">
+    <form id="formulario" action="#" method="GET">
+
+      <input class="form-control" type="text" id="name-usuario" name="user" required placeholder="Ingrese su nombre de usuario">
+
+      <input class="form-control" type="password" id="contraseña" name="password" required maxlength="12" minlength="6"
+        placeholder="Ingrese su contraseña">
+
+      <button class="btn btn-danger mt-3" type="submit" value="Registrarme" id="boton">Registrarme</button>
+  </div>
   </form>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>

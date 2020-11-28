@@ -26,8 +26,9 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <ul class="mi-perfil">
-        <li><a href="#" id="nickname"></a>
-          <ul >
+        <li><button id="boton-perfil" type="button" class="btn btn-outline-info btn-sm"><span class="fas fa-user"><span
+                class="mx-1"></span><span href="#" id="nickname"></span></button>
+          <ul>
             <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
             <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
             <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
@@ -36,60 +37,52 @@
       </ul>
     </div>
   </nav>
-  
+
+  <div id="auto"></div>
   <div id="info-container">
-    
   </div>
   <hr>
   <h2 class="subtitulo">Comentarios y Calificaciones</h2>
-  <div id="calificaciones">
-    
+  <div id="opiniones">
   </div>
   <div id="newComment">
-
   </div>
   <hr>
 
-  <div id="addComment">
-    
-      <form id="commentForm">
-        
-        <div id="userComment1" ></div>
+  <div class="container d-flex justify-content-center" id="addComment">
+    <div id="userComment1" class="row col-12 m-4 p-2 badge badge-primary"></div>
+    <form class="row row-content" id="form col-12">
+      <div class="row col-12 justify-content-center"> 
         <label for="commentBox"></label>
-        <textarea id="commentBox" rows="3" cols="50" placeholder="Añade un comentario."></textarea>
+        <textarea class="form-control ml-4 col-6" rows="3" placeholder="Añade un comentario."></textarea>
+      </div>
+      <div class="row col-12 justify-content-center align-items-center m-3">
         <label for="calific" id="labelCalif">Agrega una calificación: </label>
-        <input type="number" max="5" min="1" id="calific">
+        <input type="number" class="form-control col-1 ml-2" max="5" min="1" id="calific">
+      </div>
+      <div class="row col-12 justify-content-center">
         <br>
-        <button id="enviarComentario">Enviar</button>
-        
-      </form>
-     
+        <button class="btn btn-danger font-weight-bold ">Enviar</button>
+      </div>
+    </form>
   </div>
 
   <hr>
-  <h3 class="subTrelacionados">Productos relacionados</h3>
-  <div id="relacionados">
-
-  </div>
-  
-  <!--<div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div id="card">
+    <div class="card-header bg-primary">
+      <h2 class="card-title relacionadostitle">Productos relacionados</h2>
     </div>
-  </div>-->
-  
-  
-  
+    <div class="card-body">
+      <div id="relacionados"></div>
+    </div>
+  </div>
+  <hr>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
   <div id="spinner-wrapper">

@@ -1,11 +1,12 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
+const CATEGORIES_URL = "http://localhost:3000/e-commerce/categories";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
+const PRODUCTS_URL = "http://localhost:3000/e-commerce/products";
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const CART2 = "http://localhost:3000/e-commerce/cart";
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -40,22 +41,25 @@ var getJSONData = function(url){
     });
 }
 
-if (!sessionStorage.getItem("logueado")&& !(window.location.href.endsWith("login.html"))){
-  window.location = "login.html"}
+function chequearLogin() {
+    if (!sessionStorage.getItem("logueado")&& !(window.location.href.endsWith("login.html"))){
+    window.location = "login.html"}
+}
 
 function mostrarUser(){
-  var usuarioGuardado = localStorage.getItem("correo");
+  var usuarioGuardado = localStorage.getItem("userName");
 
   document.getElementById("nickname").innerHTML = usuarioGuardado;
 }
 
-mostrarUser();
+function cerrarSesion(){
+  document.getElementById('cerrar-sesion').addEventListener('click', function(){
+    sessionStorage.removeItem('logueado');
+  })
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  document.getElementById('cerrar-sesion').addEventListener('click', function(){
-    sessionStorage.removeItem('logueado');
-  })
-
+  chequearLogin();
 });

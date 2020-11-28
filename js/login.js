@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         location.href = "./index.html";
         sessionStorage.setItem("logueado", true);
         
-        var username = document.getElementById("correo");
-        localStorage.setItem("correo", username.value);
+        var campoUsername = document.getElementById("name-usuario").value;
+        
+        localStorage.setItem("userName", campoUsername);
         
         return true;
     })

@@ -11,6 +11,9 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
+  <link href="css/perfil-desplegable.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -40,21 +43,109 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <ul class="mi-perfil">
+        <li><button id="boton-perfil" type="button" class="btn btn-outline-info btn-sm"><span class="fas fa-user"><span
+                class="mx-1"></span><span href="#" id="nickname"></span></button>
+          <ul>
+            <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
+            <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
+            <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <div class="row row-content justify-content-center">
+      <div class="card mt-3 col-8">
+        <h2 class="card-header mt-3 bg-danger text-white">Mi perfil</h2>
+        <div class="card-body justify-self-around">
+          <dl class="row">
+            <dt class="col-6 bg-light">Nombre: </dt>
+            <dd class="col-6" id="box-name"></dd>
+            <dt class="col-6">Apellido: </dt>
+            <dd class="col-6" id="box-surname"></dd>
+            <dt class="col-6 bg-light">Edad: </dt>
+            <dd class="col-6" id="box-age"></dd>
+            <dt class="col-6">Tel.: </dt>
+            <dd class="col-6" id="box-tel"></dd>
+            <dt class="col-6 bg-light">Email: </dt>
+            <dd class="col-6" id="box-email"></dd>
+            <dt class="col-6">Localidad: </dt>
+            <dd class="col-6" id="box-loc"></dd>
+            <dt class="col-6 bg-light">Dirección: </dt>
+            <dd class="col-6" id="box-adr"></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <button type="button" class="btn mt-3 col-3 btn-danger" data-toggle="modal" data-target="#myModal">Editar
+        perfil</button>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-white card-header bg-danger" id="tituloModal">Editar Perfil</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" class="form-control" id="nombre" aria-describedby="nombreInput" required
+                  placeholder="Tu nombre.">
+                <div id="avisoNombre"></div>
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido: </label>
+                <input type="text" class="form-control" id="apellido" placeholder="Tu apellido" required>
+                <div id="avisoApellido"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="edad">Edad: </label>
+                  <input type="text" class="form-control col-6" id="edad" placeholder="Tu edad" required>
+                  <div id="avisoEdad"></div>
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono: </label>
+                  <input type="text" class="form-control" id="telefono" placeholder="Teléfono de contacto" required>
+                  <div id="avisoTel"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="correo">Email: </label>
+                <input type="email" class="form-control" id="correo" placeholder="Tu correo electrónico" required>
+                <div id="avisoEmail"></div>
+              </div>
+              <div class="form-group">
+                <label for="localidad">Localidad: </label>
+                <input type="text" class="form-control" id="localidad" placeholder="Tu localidad">
+              </div>
+              <div class="form-group">
+                <label for="direccion">Dirección: </label>
+                <input type="text" class="form-control" id="direccion" placeholder="Tu direccion">
+              </div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" id="guardarcambios" class="btn btn-success">Guardar cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">

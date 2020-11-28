@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/cart.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/perfil-desplegable.css" rel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -30,6 +31,7 @@
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
@@ -41,31 +43,139 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="perfil21">
+        <ul class="mi-perfil">
+          <li><button id="boton-perfil" type="button" class="btn btn-outline-info btn-sm"><span
+                class="fas fa-user"><span class="mx-1"></span><span href="#" id="nickname"></span></button>
+            <ul>
+              <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
+              <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
+              <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <h1>Carrito de compras</h1>
-  <div id="contenedor">
-    
-  </div>
-  <div class="contenedorTotal">
-    <table class="tablaTotal">
+
+  <h1 class="titulo">Carrito de compras</h1>
+  <table class="table cart-table">
+    <thead>
       <tr>
-        <th>Total</th>
+        <th scope="col"></th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio unitario</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Subtotal</th>
       </tr>
-      <tr>
-        <td id="total"></td>
-      </tr>
-    </table>
+    </thead>
+    <tbody id="contenedor">
+
+    </tbody>
+  </table>
+  <hr>
+  <div class="subtotalDl">
+    <dl class="row subtotalDl">
+      <dt class="col-6">Subtotal (USD): </dt>
+      <dd class="col-6" id="subtotal"></dd>
+    </dl>
   </div>
-  <!--<div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <hr>
+  <div class="formadepago">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Seleccionar
+      forma de pago y método de envio</button><br><br>
+  </div>
+  <hr>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Metodo de envío</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="#" method="GET" id="formulario">
+            <input type="radio" id="opcion1" name="envio" value="premium"">
+            <label for=" opcion1">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
+            <br>
+            <input type="radio" id="opcion2" name="envio" value="express">
+            <label for="opcion2">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
+            <br>
+            <input type="radio" id="opcion3" name="envio" value="standard" required>
+            <label for="opcion3">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
+            <hr>
+            <h2 class="modal-subtitle">Forma de pago</h2>
+            <hr>
+            <p class="nombre-tarjeta">Pagar con tarjeta</p>
+            <select name="select">
+              <option>MasterCard</option>
+              <option>Visa</option>
+            </select>
+            <hr>
+            <label for="card">Numero de tarjeta</label>
+            <input type="text" id="card" name="card" required>
+            <div id="mensaje"></div><br>
+            <label for="code">Código de seguridad</label>
+            <input type="text" id="code" name="card-code" maxlength="3" minlength="3" class="col-lg-2" required>
+            <div id="mensaje2"></div><br>
+            <label for="client-name">Nombre: </label>
+            <input type="text" id="client-name" name="client-name" required><br>
+            <div id="mensaje3"></div><br>
+            <label for="client-surname">Apellido: </label>
+            <input type="text" id="client-surname" name="client-surname" required><br>
+            <div id="mensaje4"></div><br>
+            <label for="direccion">Direccion: </label>
+            <input type="text" id="client-address" name="direccion" required>
+            <div id="mensaje5"></div><br>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" form="formulario" id="chequear-btn" class="btn btn-primary">Aceptar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
-  </div>-->
+  </div>
+  <div class="container d-flex justify-content-center">
+    <div class="card col-6">
+      <div class="card-header bg-warning">
+        <div class="title cardtitle">Total con envío incluido</div>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-2">Total a pagar: </dt>
+          <dd class="col-9">
+            <div id="totalmasenvio"></div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="ctdr2">
+    <div class="row">
+      <div class="row-content">
+        <button type="submit" form="formulario" class="btn btn-success font-weight-bold ml-2" id="comprar">Finalizar
+          compra <img src="img/carritodecompras.png" width="25px" alt="icono de carrito de compras"></button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+    </div>
+  </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -79,6 +189,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+
 </body>
 
 </html>

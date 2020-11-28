@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/products.css" rel="stylesheet">
-    <link href="css/perfil-desplegable.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <ul class="mi-perfil">
-          <li><p href="#" id="nickname"></p>
-            <ul >
-              <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
-              <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
-              <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="ordenarSegun">
-      <form id="orden" action="#" method="POST">
-        <label for="rangoDesde">Precio desde: $</label>
-        <input type="text" id="rangoDesde" name="rangoDePrecios1" placeholder="1000">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-        <label for="rangoHasta">Hasta: $</label>
-        <input type="text" id="rangoHasta" name="rangoDePrecios2" placeholder="2000">
-      
-        <input type="button" id="boton1" value="Filtrar">
-      </form>
-      
-      <ul class="ordenarLista">
-        <li><a href="#" class="Os">Ordenar según</a>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/products.css" rel="stylesheet">
+  <link href="css/perfil-desplegable.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <ul class="mi-perfil">
+        <li><button id="boton-perfil" type="button" class="btn btn-outline-info btn-sm"><span class="fas fa-user"><span
+                class="mx-1"></span><span href="#" id="nickname"></span></button>
           <ul>
-            <li><a href="#" id="relevancia">Relevancia</a></li>
-            <li><a href="#" id="menprec">Menor precio</a></li>
-            <li><a href="#" id="mayprec">Mayor precio</a></li>
+            <li><a href="my-profile.html" id="ir-a-perfil">Mi perfil</a></li>
+            <li><a href="cart.html" id="ir-a-carrito">Carrito</a></li>
+            <li><a href="login.html" id="cerrar-sesion">Cerrar sesión</a></li>
           </ul>
         </li>
       </ul>
-      
     </div>
-    <h1>Productos</h1>
-    <main id="pro-list-container">
+  </nav>
+  <div class="row ordenarSegun">
+    <form id="orden" action="#" method="POST">
+      <div class="form-row">
+        <div class="form-group mr-1">
+          <label for="rangoDesde" class="sr-only">Precio desde: USD</label>
+          <input type="text" class="form-control" id="rangoDesde" name="rangoDePrecios1" placeholder="Desde: USD">
+        </div>
+        <div class="form-group mr-1">
+          <label for="rangoHasta" class="sr-only">Hasta: USD</label>
+          <input type="text" class="form-control" id="rangoHasta" name="rangoDePrecios2" placeholder="Hasta: USD">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-sm btn-success" id="filtrar">Filtrar</button>
+        </div>
+      </div>
+    </form>
 
-        
-    </main>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-  </body>
+    <ul class="ordenarLista">
+      <li><button type="button" class="btn btn-info ordenarbtn">Ordenar <i class="fa fa-angle-double-down"></i></button>
+        <ul>
+          <li><a href="#" id="relevancia">Relevancia</a></li>
+          <li><a href="#" id="menprec">Menor precio</a></li>
+          <li><a href="#" id="mayprec">Mayor precio</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+  <h1 class="productosh1">Productos</h1>
+  <main id="pro-list-container">
+
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+</body>
+
 </html>
